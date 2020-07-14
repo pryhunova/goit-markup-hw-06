@@ -65,10 +65,15 @@
     </header>
 
 <!-- Модальное окно -->
-    <form class="form">
+    <form class="form is-hidden">      
       <p class="group-title">Оставьте свои данные, мы вам перезвоним</p>
+      <svg class="form-icon-close" width="30px" height="30px">
+        <use href="./images/sprite.svg#icon-icon-close"></use>
+      </svg>
+
+            <!-- Форма ввода данных -->
       <div class="form-row">
-        <input type="name" class="form-field" name="name" id="name" placeholder="" />
+        <input type="text" class="form-field" name="name" id="name" placeholder=" " />
          <label for="name" class="form-label">
           Имя</label>
           <svg class="form-icon" width="18px" height="18px">
@@ -78,11 +83,10 @@
           </div>
     
       <div class="form-row">
-        <input type="tel" class="form-field" name="tel" id="tel" placeholder="" />
-        
-        <label for="tel" class="form-label">
+        <input type="tel" class="form-field" name="tel" id="tel" placeholder=" " />
+          <label for="tel" class="form-label">
           Телефон</label>
-          <svg class="form-icon" width="18px" height="18px">
+           <svg class="form-icon" width="18px" height="18px">
             <use href="./images/sprite.svg#icon-icon-tel"></use>
           </svg>
         </div>
@@ -94,15 +98,15 @@
           <svg class="form-icon" width="18px" height="18px">
             <use href="./images/sprite.svg#icon-icon-mail"></use>
           </svg>
-              </div>
+       </div>
      
       <div class="form-row">        
-        <textarea class="form-comment" name="comment" id="comment" rows="8" placeholder=""></textarea>
+        <textarea class="form-comment" name="comment" id="comment" rows="8" placeholder=" "></textarea>
         <label for="comment" class="comment">Комментарий</label>
       </div>
     
       <div class="form-policy">
-        <input type="checkbox" name="policy" id="policy" />
+        <input type="checkbox" name="policy" id="policy" class="checkbox"/>
         <label for="policy" class="policy">Соглашаюсь с рассылкой и принимаю <a href="" class="form-offer">Условия
             договора</a></label>
        </div>
@@ -516,9 +520,7 @@
              <input type="email" name="mail" class="email" id="mail" placeholder="E-mail" />
                     <button type="submit" class="newsletter-button button link">Подписаться</button>
           </div>
-        </form>   
-        
-
+        </form>         
 
     </footer>
   </body>
