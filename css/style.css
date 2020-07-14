@@ -870,7 +870,7 @@ p {
   transform: translateY(0);
 }
 
-/* модальное окно */
+/* скрывает модальное окно */
 .backdrop {
   position: fixed;
   z-index: 2;
@@ -888,6 +888,7 @@ p {
   pointer-events: none;
 }
 
+/*разметка модального окна */
 .form {
   position: absolute;
   top: 50%;
@@ -904,6 +905,7 @@ p {
   border-radius: 4px;
 }
 
+/*призыв к действию в форме */
 .group-title {
   margin-bottom: 30px;
   font-size: 20px;
@@ -912,6 +914,7 @@ p {
   letter-spacing: 0.03em;
 }
 
+/*форма ввода данных */
 .form-field {
   display: flex;
   flex-direction: column;
@@ -935,6 +938,7 @@ p {
   fill: var(--accent-color);
 }
 
+/*позиционированние лейбла */
 .form-row {
   position: relative;
 }
@@ -996,6 +1000,7 @@ textarea {
   left: 16px;
   transform: translateY(-0%);
   width: 448px;
+  margin-bottom: 20px;
   transition: var(--duration) var(--function);
 
   font-size: 14px;
@@ -1011,14 +1016,20 @@ textarea {
   transform: translateY(-33px);
 }
 
+.form-comment:focus {
+  border: 1px solid var(--accent-color);
+}
+
 /*соглашение с условиями */
 .form-offer {
   color: var(--accent-color);
 }
 
 .policy {
-  display: inline-block;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
 
   font-size: 14px;
   line-height: 24px;
@@ -1027,9 +1038,36 @@ textarea {
 
 /*скрываем чекбокс с помощью autoprefixer*/
 .checkbox {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.icon-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border: 2px solid var(--primary-title-color);
+  border-radius: 4px;
+}
+
+.checkbox:checked + .icon-checkbox {
+  background-image: url('../images/icons/icon-check-on.svg');
+  background-size: contain;
+  background-color: var(--accent-color);
+  background-origin: border-box;
+  border-color: var(--accent-color);
 }
 
 /*кнопка отправки */
@@ -1063,6 +1101,7 @@ textarea {
   top: 8px;
   right: 8px;
   padding: 9px;
+  transition: fill var(--duration) var(--function);
 
   fill: var(--primary-title-color);
   border-radius: 50%;
@@ -1070,8 +1109,6 @@ textarea {
   outline: none;
   cursor: pointer;
   background-color: var(--primary-background-color);
-
-  transition: fill color var(--duration) var(--function);
 }
 
 .icon-close {
@@ -1081,5 +1118,9 @@ textarea {
 /* ховер и фокус иконки закрытия */
 .form-icon-close:hover,
 .form-icon-close:focus {
+  fill: var(--accent-color);
+}
+.form-icon-close:focus + icon-close,
+.form-icon-close:hover + icon-close {
   fill: var(--accent-color);
 }
