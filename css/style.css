@@ -84,10 +84,11 @@ p {
 /* секция хедер */
 /* черта под шапкой */
 .header {
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   min-height: 80px;
+
   border-bottom: 1px solid #ececec;
   background-color: var(--primary-background-color);
 }
@@ -95,14 +96,16 @@ p {
 /* лого */
 .logo {
   display: block;
+  transition: color var(--duration) var(--function);
+
   font-family: Raleway, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
   letter-spacing: 0.03em;
-  transition: color var(--duration) var(--function);
 }
+
 .logo-accent {
   color: var(--accent-color);
 }
@@ -114,20 +117,26 @@ p {
 /* категории */
 .site-nav .link {
   position: relative;
+  transition: color var(--duration) var(--function);
+
+  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-  display: block;
+
   color: var(--primary-title-color);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  transition: color var(--duration) var(--function);
 }
 
 .site-nav .link::after {
   position: absolute;
+  transform: scaleX(0);
+  transition: opacity var(--duration) var(--function),
+    transform var(--duration) var(--function);
+
   bottom: 0;
   content: '';
   opacity: 0;
@@ -136,10 +145,6 @@ p {
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color);
-
-  transform: scaleX(0);
-  transition: opacity var(--duration) var(--function),
-    transform var(--duration) var(--function);
 }
 .site-nav .link:hover::after,
 .site-nav .link:focus::after {
@@ -195,7 +200,9 @@ p {
 
 .contacts-header a {
   display: flex;
+  transition: color var(--duration) var(--function);
   align-items: center;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.15;
@@ -203,7 +210,6 @@ p {
   font-style: normal;
   text-decoration: none;
   color: #757575;
-  transition: color var(--duration) var(--function);
 }
 
 .contacts-header a:hover,
@@ -289,16 +295,17 @@ p {
   padding-bottom: 15px;
   width: 358px;
   height: 50px;
+  margin-right: 12px;
+  align-items: center;
+
   font-size: 16px;
   line-height: 20px;
-  align-items: center;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: var(--fotter-background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  margin-right: 12px;
 }
 
 /*logo-footer */
@@ -318,14 +325,15 @@ p {
 .address-footer {
   display: flex;
   flex-direction: column;
+
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
   color: var(--hero-white-color);
-  flex-direction: column;
 }
+
 .address-footer .contacts-footer {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -343,12 +351,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color var(--duration) var(--function);
+
   width: 44px;
   height: 44px;
   border-radius: 50%;
   padding: 12px;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color var(--duration) var(--function);
 }
 
 .label .item a:hover,
@@ -378,6 +387,7 @@ p {
 .newsletter {
   display: inline-block;
   margin-bottom: 20px;
+
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -395,6 +405,7 @@ p {
   padding-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
+
   text-align: center;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.8),
@@ -408,13 +419,14 @@ p {
 
 /* заголовок герой */
 .hero-title {
+  width: 696px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
   font-style: normal;
   font-weight: 900;
   font-size: 44px;
-  width: 696px;
+
   line-height: 60px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -424,6 +436,9 @@ p {
 /* кнопка заказать и подписаться */
 .button {
   display: inline-flex;
+  min-width: 200px;
+  padding: 10px 32px;
+
   color: var(--hero-white-color);
   background-color: var(--accent-color);
   font-style: normal;
@@ -431,8 +446,6 @@ p {
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.06em;
-  min-width: 200px;
-  padding: 10px 32px;
   border-radius: 4px;
   border: none;
   text-align: center;
@@ -485,6 +498,7 @@ p {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
+
   background-size: 70px;
   background-repeat: no-repeat;
   background-position: center;
@@ -524,8 +538,8 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-
   padding: 27px 0 27px 0;
+
   color: var(--hero-white-color);
   font-style: normal;
   font-weight: bold;
@@ -566,12 +580,13 @@ p {
   border-radius: 0px 0px 4px 4px;
 }
 .section-team .team-title {
+  margin-bottom: 50px;
+
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.03em;
-  margin-bottom: 50px;
   text-align: center;
 }
 .team-list .item {
@@ -585,6 +600,7 @@ p {
 .team-list .item {
   width: 270px;
   height: 422px;
+
   text-align: center;
   background-color: var(--primary-background-color);
 }
@@ -630,18 +646,18 @@ p {
 
 .team-icons a {
   display: flex;
+  padding: 12px;
+  transition: background-color var(--duration) var(--function);
+
   justify-content: center;
   align-items: center;
-  padding: 12px;
   border-radius: 50px;
-  transition: background-color var(--duration) var(--function);
 }
 
 .social-icon {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
-
   transition: fill var(--duration) var(--function);
 }
 
@@ -690,11 +706,12 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: border var(--duration) var(--function);
+
   width: 175px;
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: border var(--duration) var(--function);
 }
 .clients-icon {
   fill: #afb1b8;
@@ -728,22 +745,24 @@ p {
 }
 .btn .portfolio-button {
   padding: 6px 22px 6px 22px;
+  transition: color var(--duration) var(--function),
+    background-color var(--duration) var(--function),
+    box-shadow var(--duration) var(--function);
+
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.03em;
   color: var(--primary-title-color);
+
   background-color: var(--section-background-color);
   border-radius: 4px;
   border: transparent;
   outline: none;
   cursor: pointer;
-
-  transition: color var(--duration) var(--function),
-    background-color var(--duration) var(--function),
-    box-shadow var(--duration) var(--function);
 }
+
 .btn-item {
   margin-left: 8px;
 }
@@ -852,7 +871,19 @@ p {
 }
 
 /* модальное окно */
+.backdrop {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -861,35 +892,16 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
+
   padding: 40px;
   min-width: 528px;
   min-height: 581px;
+
   background-color: var(--primary-background-color);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-}
-
-/* Иконка закрытия формы */
-.form-icon-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 9px;
-
-  fill: var(--primary-title-color);
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-
-  transition: color var(--duration) var(--function);
-}
-
-/* ховер и фокус иконки закрытия */
-.form-icon-close:hover,
-.form-icon-close:focus {
-  fill: var(--accent-color);
 }
 
 .group-title {
@@ -908,11 +920,19 @@ p {
   padding: 12px 18px 12px 42px;
   margin-bottom: 28px;
 
+  color: var(--primary-title-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
 
-  transition: color var(--duration) var(--function);
+  transition: border var(--duration) var(--function);
+}
+
+.form-field:focus {
+  border: 1px solid var(--accent-color);
+}
+.form-field:focus ~ .form-icon {
+  fill: var(--accent-color);
 }
 
 .form-row {
@@ -925,12 +945,19 @@ p {
   left: 42px;
   transform: translateY(-50%);
   width: 448px;
+  transition: var(--duration) var(--function);
+
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
+}
 
-  transition: color var(--duration) var(--function);
+.form-field:focus + .form-label,
+.form-field:not(:placeholder-shown) + .form-label {
+  color: var(--accent-color);
+  left: 16px;
+  transform: translateY(-38px);
 }
 
 /*иконки возле лейбла */
@@ -940,11 +967,10 @@ p {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
+  transition: var(--duration) var(--function);
 
   margin-right: 10px;
   fill: var(--primary-title-color);
-
-  transition: color var(--duration) var(--function);
 }
 
 /* поле для комментариев */
@@ -958,11 +984,11 @@ textarea {
   height: 120px;
   padding: 12px 16px 12px 16px;
   margin-bottom: 20px;
+
+  color: var(--primary-title-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
-
-  transition: fill var(--duration) var(--function);
 }
 .comment {
   position: absolute;
@@ -970,10 +996,19 @@ textarea {
   left: 16px;
   transform: translateY(-0%);
   width: 448px;
+  transition: var(--duration) var(--function);
+
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
+}
+
+.form-comment:focus + .comment,
+.form-comment:not(:placeholder-shown) + .comment {
+  color: var(--accent-color);
+  left: 16px;
+  transform: translateY(-33px);
 }
 
 /*соглашение с условиями */
@@ -984,12 +1019,13 @@ textarea {
 .policy {
   display: inline-block;
   margin-bottom: 30px;
+
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
 }
 
-/*скрываем чекбокс */
+/*скрываем чекбокс с помощью autoprefixer*/
 .checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1001,6 +1037,9 @@ textarea {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px 55px;
+  min-width: 200px;
+  justify-content: center;
 
   color: var(--hero-white-color);
   background-color: var(--accent-color);
@@ -1010,33 +1049,37 @@ textarea {
   line-height: 30px;
   letter-spacing: 0.06em;
   text-align: center;
-
-  padding: 10px 55px;
-  min-width: 200px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
   border: none;
-  justify-content: center;
   outline: none;
   cursor: pointer;
 }
 
-/* фокус в форме */
+/* Иконка закрытия модалки */
+.form-icon-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 9px;
 
-.form-field:focus + .form-label,
-.form-field:not(:placeholder-shown) + .form-label {
-  color: var(--accent-color);
-  left: 16px;
-  transform: translateY(-38px);
+  fill: var(--primary-title-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  cursor: pointer;
+  background-color: var(--primary-background-color);
+
+  transition: fill color var(--duration) var(--function);
 }
 
-.form-field:focus ~ .form-icon {
+.icon-close {
+  display: block;
+}
+
+/* ховер и фокус иконки закрытия */
+.form-icon-close:hover,
+.form-icon-close:focus {
   fill: var(--accent-color);
-}
-
-.form-comment:focus + .comment,
-.form-comment:not(:placeholder-shown) + .comment {
-  color: var(--accent-color);
-  left: 16px;
-  transform: translateY(-33px);
 }

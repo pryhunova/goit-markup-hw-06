@@ -65,11 +65,16 @@
     </header>
 
 <!-- Модальное окно -->
-    <form class="form is-hidden">      
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal">
+    <form class="form">      
       <p class="group-title">Оставьте свои данные, мы вам перезвоним</p>
-      <svg class="form-icon-close" width="30px" height="30px">
+
+      <button class="form-icon-close" data-modal-close>
+      <svg class="icon-close" width="11px" height="11px">
         <use href="./images/sprite.svg#icon-icon-close"></use>
       </svg>
+      </button>
 
             <!-- Форма ввода данных -->
       <div class="form-row">
@@ -104,6 +109,8 @@
         <textarea class="form-comment" name="comment" id="comment" rows="8" placeholder=" "></textarea>
         <label for="comment" class="comment">Комментарий</label>
       </div>
+
+      <!-- Принятие условий -->
     
       <div class="form-policy">
         <input type="checkbox" name="policy" id="policy" class="checkbox"/>
@@ -112,15 +119,19 @@
        </div>
     
       <button type="submit" class="form-button">Отправить</button>
-     </form>
+        </form>
+      </div>
+    </div>
 
     <!-- Уникальный контент -->
     <main>
       <!-- Герой -->
-      <section class="hero">
+      <section class="hero is-hidden">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <a href="" class="button link">Заказать услугу</a>
+          <button class="button" data-modal-open>
+          Заказать услугу
+          </button>
         </div>
       </section>
 
@@ -521,7 +532,9 @@
                     <button type="submit" class="newsletter-button button link">Подписаться</button>
           </div>
         </form>         
-
     </footer>
-  </body>
+
+    <script src="./js/modal.js"></script>
+
+   </body>
 </html>
