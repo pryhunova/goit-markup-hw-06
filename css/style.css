@@ -894,7 +894,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  padding-top: 40px;
+  padding: 40px;
   min-width: 528px;
   min-height: 581px;
 
@@ -902,6 +902,9 @@ p {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+}
+.form ul {
+  padding: 0;
 }
 
 /*призыв к действию в форме */
@@ -940,6 +943,7 @@ p {
 /*позиционированние лейбла */
 .form-row {
   position: relative;
+  display: block;
 }
 
 .form-label {
